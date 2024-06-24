@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-[65px] bg-gradient-to-b from-theme1 to-theme3 flex justify-between gap-4 px-1 md:px-4"
+    class="h-[65px] bg-gradient-to-b from-theme1 to-theme2 flex justify-between gap-4 px-1 md:px-4"
   >
     <!-- logo -->
     <NuxtLink to="/" class="self-center flex-shrink-0">
@@ -57,7 +57,7 @@
                 @click.prevent="useToast().showCommingSoon()"
                 class="text-xs font-semibold hover:bg-slate-100 bg-slate-50 text-slate-600"
               >
-                <UserIcon class="w-4 h-4" />
+                <IconsUserIcon class="w-4 h-4" />
                 <span>حسابي</span>
               </p>
             </li>
@@ -84,7 +84,7 @@
               <a
                 class="text-xs font-semibold text-red-500 capitalize hover:bg-slate-100 bg-slate-50"
               >
-                <LogoutIcon class="w-4 h-4" />
+                <IconsLogoutIcon class="w-4 h-4" />
                 {{ "خروج" }}
               </a>
             </li>

@@ -5,6 +5,7 @@ export const useGlobalStore = defineStore("useGlobalStore", {
       // activeSideTab: { id: 1 },
       activeSideTab: { id: "GII" },
       activeSector: 1,
+      sideCollapsed: false,
     };
   },
 
