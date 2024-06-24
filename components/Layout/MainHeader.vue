@@ -16,31 +16,34 @@
         class="items-center hidden gap-4 md:flex"
         v-if="status == 'authenticated'"
       >
-        <button
+        <!-- <button
           type="button"
           class="bg-white bg-opacity-10 hover:bg-white hover:bg-opacity-25 btn btn-circle btn-sm"
         >
           <NotificationIcon class="w-5 h-5 text-white" />
-        </button>
+        </button> -->
 
         <div class="dropdown dropdown-end">
           <label
             tabindex="0"
-            class="flex items-center h-12 w-auto md:w-[220px] overflow-hidden gap-1 p-2 text-white bg-white rounded-lg cursor-pointer hover:bg-opacity-25 bg-opacity-10 focus:bg-white focus:text-slate-700 min-w-[170px]"
+            class="flex items-center h-12 w-auto md:w-[220px] overflow-hidden gap-2 p-2 text-white bg-white rounded-lg cursor-pointer hover:bg-opacity-25 bg-opacity-10 focus:bg-white focus:text-slate-700 min-w-[170px]"
           >
-            <img
-              v-if="image"
-              class="object-cover w-8 h-8 rounded-full bg-theme1"
-              :src="image"
-              :onerror="`this.src='${require('~/assets/img/UserIcon.svg')}'`"
-              alt
+            <IconsUserIcon
+              class="w-8 h-8 p-1 rounded-full text-slate-50 bg-theme1"
             />
+
             <div class="grid">
-              <span class="text-xs font-semibold">{{ "name" }}</span>
-              <span class="text-[10px] truncate">{{ "email@email.com" }}</span>
+              <span class="text-xs font-semibold">{{
+                data.response.name
+              }}</span>
+
+              <span class="text-[10px] truncate">{{
+                data.response.phone
+              }}</span>
             </div>
-            <LeftChevronIcon
-              class="w-4 h-4 border border-white border-solid rounded-full ltr:ml-auto rtl:mr-auto ltr:rotate-180"
+
+            <IconsArrowDownIcon
+              class="w-4 h-4 border border-white border-solid rounded-full ms-auto"
             />
           </label>
           <ul
@@ -117,7 +120,6 @@
 <script setup lang="ts">
 const { status, signOut, data } = useAuth();
 // Possible values for `status.value`: 'unauthenticated', 'loading', 'authenticated'
-console.log("Login status:", status.value);
 
 onMounted(() => {
   setInterval(() => {

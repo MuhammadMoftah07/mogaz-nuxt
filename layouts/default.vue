@@ -12,9 +12,7 @@
         "
         class="w-full"
       >
-        <div
-          class="bg-slate-50 h-[calc(100vh-65px)] overflow-y-auto overflow-x-hidden"
-        >
+        <div class="bg-slate-50 h-[calc(100vh-65px)]">
           <slot />
         </div>
       </div>

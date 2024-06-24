@@ -126,12 +126,15 @@ const loading = ref(false);
 const form = reactive({});
 const login = async () => {
   loading.value = true;
-  await signIn({ ...form }).catch((err) => {
+  try {
+    await signIn({ ...form }, { callbackUrl: false });
+    // loading.value = false;
+    // await router.push(   "/");
+    useNuxtApp().$toast.success("تم الدخول بنجاح، اهلا بيك!");
+  } catch (err) {
     loading.value = false;
-    // useToast().errorHandler(err);
-  });
-  loading.value = false;
-  await router.push("/");
-  useNuxtApp().$toast.success("تم الدخول بنجاح، اهلا بيك!");
+    if (err?.response?.status == 403)
+      useNuxtApp().$toast.error("خطأ في بيانات الدخول");
+  }
 };
 </script>
