@@ -121,12 +121,6 @@
 const { status, signOut, data } = useAuth();
 // Possible values for `status.value`: 'unauthenticated', 'loading', 'authenticated'
 
-onMounted(() => {
-  setInterval(() => {
-    console.log("User data:", data.value);
-  }, 4000);
-});
-
 const route = useRoute();
 const logout = async () => {
   await signOut();

@@ -94,19 +94,11 @@
               <button
                 class="flex w-full gap-4 mx-auto mt-2 bg-theme2 hover:bg-theme2/80 btn"
                 @click="submit()"
+                :disabled="loading"
+                v-auto-animate
               >
-                <svg
-                  class="w-6 h-6 -ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                  <circle cx="8.5" cy="7" r="4" />
-                  <path d="M20 8v6M23 11h-6" />
-                </svg>
+                <span v-if="loading" class="loading loading-spinner"></span>
+                <IconsAddUserIcon class="w-6 h-6" />
                 <span> تسجيل دخول</span>
               </button>
             </div>
@@ -126,10 +118,12 @@
 
 <style scoped>
 .social-btn {
-  @apply btn justify-center w-full max-w-xs gap-3 py-3 font-bold text-gray-800 duration-200 bg-slate-100  rounded-lg   border-slate-100 hover:shadow focus:shadow-sm my-2;
+  @apply btn justify-center w-full max-w-xs gap-3 py-3 font-bold text-gray-800 duration-200 bg-slate-100  rounded-lg border-slate-100 hover:shadow focus:shadow-sm my-2;
 }
 </style>
 <script setup>
+const { signUp, signOut, data, token, status, getSession } = useAuth();
+const loading = ref(false);
 const form = reactive({});
 
 const checkErrors = () => {
@@ -142,7 +136,17 @@ const checkErrors = () => {
 
 const submit = () => {
   if (!checkErrors()) return;
+  loading.value = true;
 
-  $http("/admin/store", { method: "post", body: { ...form } });
+  // $http("/admin/store", { method: "post", body: { ...form } });
+  signUp({ ...form }, { callbackUrl: false })
+    .then(() => {
+      loading.value = false;
+      useNuxtApp().$toast.success("تم التسجيل بنجاح، اهلا بك!");
+    })
+    .catch((err) => {
+      loading.value = false;
+      useToast().errorHandler(err);
+    });
 };
 </script>

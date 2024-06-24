@@ -7,12 +7,24 @@ export const useToast = () => ({
       // Options specific to success toasts
     }),
   errorHandler: (err: any, customMessage: any) => {
-    console.log("error ,", err);
+    console.log("error ,", err.response);
     // return;
     if (customMessage) {
       useNuxtApp().$toast.error(customMessage);
       return;
     }
+
+    if (err.response.status == 422) {
+      for (let key in err.response._data.errors) {
+        if (err.response._data.errors.hasOwnProperty(key)) {
+          err.response._data.errors[key].forEach((message) => {
+            useNuxtApp().$toast.error(message);
+          });
+        }
+      }
+      return;
+    }
+
     if (typeof err.response?._data === "object") {
       for (let i in err.response._data) {
         useNuxtApp().$toast.error(err.response._data[i]);
