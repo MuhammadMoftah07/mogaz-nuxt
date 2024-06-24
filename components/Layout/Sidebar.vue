@@ -15,7 +15,7 @@
         v-if="collapseBtn"
       >
         <IconsRightArrowIcon2
-          class="w-full"
+          class="w-full scale-125"
           :class="sideCollapsed ? 'rotate-180' : ' '"
         />
       </button>
