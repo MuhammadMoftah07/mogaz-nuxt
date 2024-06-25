@@ -2,15 +2,55 @@
   <section>
     <div class="flex flex-col mt-6 text-sm font-medium text-green-50">
       <NuxtLink
-        class="nav-link tooltip-left"
+        class="nav-link tooltip tooltip-left"
         :class="navLinkClassess"
         data-tip="الرئيسية"
         :to="'/'"
+        v-auto-animate="{ duration: 500 }"
       >
         <span class="min-w-[20px]">
-          <HomeIcon class="w-5 h-5" />
+          <IconsHomeIcon class="w-5 h-5" />
         </span>
-        <p v-if="!sideCollapsed || mobile">{{ $t("home") }}</p>
+        <p v-if="!sideCollapsed">الرئيسية</p>
+      </NuxtLink>
+
+      <NuxtLink
+        class="nav-link tooltip tooltip-left"
+        :class="navLinkClassess"
+        data-tip="الروايات"
+        :to="'/rewayat'"
+        v-auto-animate="{ duration: 500 }"
+      >
+        <span class="min-w-[20px]">
+          <IconsBookIcon class="w-5 h-5" />
+        </span>
+        <p v-if="!sideCollapsed">الروايات</p>
+      </NuxtLink>
+
+      <NuxtLink
+        class="nav-link tooltip tooltip-left"
+        :class="navLinkClassess"
+        data-tip="الشيوخ"
+        :to="'/rewayat'"
+        v-auto-animate="{ duration: 500 }"
+      >
+        <span class="min-w-[20px]">
+          <IconsTeacherIcon class="w-5 h-5" />
+        </span>
+        <p v-if="!sideCollapsed">الشيوخ</p>
+      </NuxtLink>
+
+      <NuxtLink
+        class="nav-link tooltip tooltip-left"
+        :class="navLinkClassess"
+        data-tip="الطلاب"
+        :to="'/rewayat'"
+        v-auto-animate="{ duration: 500 }"
+      >
+        <span class="min-w-[20px]">
+          <IconsStudentIcon class="w-5 h-5" />
+        </span>
+        <p v-if="!sideCollapsed">الطلاب</p>
       </NuxtLink>
     </div>
 
@@ -22,7 +62,9 @@
   </section>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const sideCollapsed = computed(() => useGlobalStore().sideCollapsed);
+</script>
 
 <style scoped>
 .nav-link {
