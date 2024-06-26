@@ -10,11 +10,9 @@
         :class="
           sideCollapsed ? 'md:w-[calc(100%-60px)]' : 'md:w-[calc(100%-200px)]'
         "
-        class="w-full"
+        class="w-full bg-slate-50 h-[calc(100vh-65px)] overflow-y-auto"
       >
-        <div class="bg-slate-50 h-[calc(100vh-65px)]">
-          <slot />
-        </div>
+        <slot />
       </div>
     </section>
   </main>

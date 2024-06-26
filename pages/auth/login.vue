@@ -1,5 +1,7 @@
 <template>
-  <section class="flex justify-center min-h-screen text-gray-900 bg-gray-100">
+  <section
+    class="flex justify-center w-full min-h-screen mx-auto text-gray-900 bg-gray-100"
+  >
     <div
       class="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg"
     >

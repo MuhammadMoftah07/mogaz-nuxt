@@ -51,6 +51,7 @@
 html,
 body {
   scrollbar-color: #3a9578 #defff5;
+  scrollbar-width: thin;
 }
 
 /* scrollbar chrome  */
@@ -253,4 +254,8 @@ input[type="number"] {
 
 .validation-msg {
   @apply inline-block mt-2 text-xs leading-none text-google;
+}
+
+.page-container{
+  @apply p-4
 }

@@ -1,5 +1,7 @@
 <template>
-  <main class="flex justify-center min-h-screen text-gray-900 bg-gray-100">
+  <section
+    class="flex justify-center w-full min-h-screen mx-auto text-gray-900 bg-gray-100"
+  >
     <div
       class="flex justify-center flex-1 max-w-screen-xl m-0 bg-white shadow sm:m-10 sm:rounded-lg"
     >
@@ -113,7 +115,7 @@
         />
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <style scoped>
@@ -122,6 +124,10 @@
 }
 </style>
 <script setup>
+definePageMeta({
+  layout: "auth",
+});
+
 const { signUp, signOut, data, token, status, getSession } = useAuth();
 const loading = ref(false);
 const form = reactive({});

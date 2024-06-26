@@ -1,12 +1,12 @@
 <template>
   <section>
-    <div class="flex flex-col mt-6 text-sm font-medium text-green-50">
+    <div class="flex flex-col mt-2 text-sm font-medium text-green-50">
       <NuxtLink
-        class="nav-link tooltip tooltip-left"
-        :class="navLinkClassess"
+        class="nav-link tooltip-left"
+        :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الرئيسية"
         :to="'/'"
-        v-auto-animate="{ duration: 500 }"
+        v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
           <IconsHomeIcon class="w-5 h-5" />
@@ -15,11 +15,11 @@
       </NuxtLink>
 
       <NuxtLink
-        class="nav-link tooltip tooltip-left"
-        :class="navLinkClassess"
+        class="nav-link tooltip-left"
+        :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الروايات"
         :to="'/rewayat'"
-        v-auto-animate="{ duration: 500 }"
+        v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
           <IconsBookIcon class="w-5 h-5" />
@@ -28,11 +28,11 @@
       </NuxtLink>
 
       <NuxtLink
-        class="nav-link tooltip tooltip-left"
-        :class="navLinkClassess"
+        class="nav-link tooltip-left"
+        :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الشيوخ"
-        :to="'/rewayat'"
-        v-auto-animate="{ duration: 500 }"
+        :to="'/test'"
+        v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
           <IconsTeacherIcon class="w-5 h-5" />
@@ -41,11 +41,11 @@
       </NuxtLink>
 
       <NuxtLink
-        class="nav-link tooltip tooltip-left"
-        :class="navLinkClassess"
+        class="nav-link tooltip-left"
+        :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الطلاب"
-        :to="'/rewayat'"
-        v-auto-animate="{ duration: 500 }"
+        :to="'/test'"
+        v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
           <IconsStudentIcon class="w-5 h-5" />
@@ -54,11 +54,39 @@
       </NuxtLink>
     </div>
 
-    <hr class="border-[#4ea78b] my-2" />
+    <hr class="my-2 border-white/20" />
 
-    <div
-      class="flex flex-col text-sm font-medium text-green-50 scrollSmaller"
-    ></div>
+    <div class="flex flex-col text-sm font-medium text-green-50 scrollSmaller">
+      <NuxtLink
+        class="nav-link tooltip-left"
+        :class="sideCollapsed ? 'tooltip' : ''"
+        data-tip="الحساب"
+        :to="'/proflie'"
+        v-auto-animate="{ duration: 150 }"
+      >
+        <span class="min-w-[20px]">
+          <IconsUserIcon class="w-5 h-5" />
+        </span>
+        <p v-if="!sideCollapsed">الحساب</p>
+      </NuxtLink>
+
+      <button
+        @click="useAuth().signOut()"
+        class="nav-link tooltip-left !text-red-300"
+        :class="sideCollapsed ? 'tooltip' : ''"
+        data-tip="تسجيل خروج"
+        v-auto-animate="{ duration: 150 }"
+      >
+        <span class="min-w-[20px]">
+          <IconsLogoutIcon class="w-5 h-5" />
+        </span>
+        <p v-if="!sideCollapsed">تسجيل خروج</p>
+      </button>
+
+      <hr class="my-2 border-white/20" />
+
+      <p class="py-1 text-xs text-center text-slate-150">V 1.0</p>
+    </div>
   </section>
 </template>
 
@@ -77,11 +105,11 @@ const sideCollapsed = computed(() => useGlobalStore().sideCollapsed);
   @apply px-2;
 }
 
-.nuxt-link-active {
+.router-link-active {
   @apply bg-white text-theme1 hover:bg-white;
 }
 
-.nuxt-link-exact-active {
+.router-link-exact-active {
   @apply bg-white text-theme1 hover:bg-white;
 }
 </style>
