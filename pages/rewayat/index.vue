@@ -1,5 +1,5 @@
 <template>
-  <main class="page-container">
+  <main class="">
     <ThemeTitle text="الروايات" />
     <ThemeInput v-model="value" />
   </main>

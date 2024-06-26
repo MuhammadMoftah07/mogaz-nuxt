@@ -31,7 +31,7 @@
         class="nav-link tooltip-left"
         :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الشيوخ"
-        :to="'/test'"
+        :to="'/teachers'"
         v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
@@ -44,7 +44,7 @@
         class="nav-link tooltip-left"
         :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الطلاب"
-        :to="'/test'"
+        :to="'/students'"
         v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
@@ -61,7 +61,7 @@
         class="nav-link tooltip-left"
         :class="sideCollapsed ? 'tooltip' : ''"
         data-tip="الحساب"
-        :to="'/proflie'"
+        :to="'/profile'"
         v-auto-animate="{ duration: 150 }"
       >
         <span class="min-w-[20px]">
