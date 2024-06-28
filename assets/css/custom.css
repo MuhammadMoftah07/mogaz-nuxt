@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 :root {
-  --appFont: "IBM Plex Sans Arabic", sans-serif;
+  /* --appFont: "IBM Plex Sans Arabic", sans-serif; */
+  --appFont: "Cairo", sans-serif;
   direction: rtl;
 }
 :root:dir(rtl) {
-  --appFont: "IBM Plex Sans Arabic", sans-serif;
+  --appFont: "Cairo", sans-serif;
 }
 
 /* tailwind layers  */
@@ -225,7 +227,10 @@ input[type="number"] {
 
 /* toasted style  */
 .Toastify__toast-body {
-  font-family: var(--appFont) ;
+  font-family: var(--appFont);
+}
+.Toastify__toast-container{
+  @apply mt-12
 }
 
 
@@ -259,3 +264,15 @@ input[type="number"] {
 .page-container{
   @apply p-4
 }
+
+ /* page transitions  */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(0.5rem);
+}
+

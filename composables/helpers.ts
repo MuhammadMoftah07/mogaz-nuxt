@@ -2,10 +2,13 @@ export const useToast = () => ({
   showCommingSoon: () => {
     useNuxtApp().$toast.info("جاري العمل عليها ...!");
   },
-  showSuccess: (message: any) =>
-    useNuxtApp().$toast.success(message, {
-      // Options specific to success toasts
+
+  showSuccess: (message: any, options: Object) =>
+    useNuxtApp().$toast(message, {
+      type: "success",
+      ...options,
     }),
+
   errorHandler: (err: any, customMessage: any) => {
     console.log("error ,", err.response);
     // return;

@@ -2,6 +2,7 @@
   <main class="">
     <ThemeTitle text="الروايات" />
     <ThemeInput v-model="value" />
+    <ThemeTable />
   </main>
 </template>
 

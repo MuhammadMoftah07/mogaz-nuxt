@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-[65px] bg-gradient-to-b from-theme1 to-theme2 flex justify-between gap-4 px-1 md:px-4"
+    class="h-[60px] bg-gradient-to-b from-theme1 to-theme2 flex justify-between gap-4 px-1 md:px-4"
   >
     <!-- logo -->
     <NuxtLink to="/" class="self-center flex-shrink-0">

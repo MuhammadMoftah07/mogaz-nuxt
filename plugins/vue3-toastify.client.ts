@@ -9,6 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     rtl: true,
     closeButton: false,
     pauseOnHover: true,
+    position: toast.POSITION.TOP_CENTER,
   });
 
   return {
