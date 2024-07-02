@@ -1,21 +1,30 @@
 <template>
   <div>
     <ClientOnly>
+      {{ headers }}
       <EasyDataTable
         :headers="headers"
         hide-footer
         border-cell
         alternating
         :items="items"
+        :loading="loading"
       >
+        <!-- <slot name="item-status" data="item"> {{ item.status }} (lbs) </slot> -->
+
+        <!-- <template v-for="(header, i) in headers">
+          <template #[`item-status`]="item"> {{ item.status }} (lbs) </template>
+        </template> -->
+
+        <!-- <template v-for="(header, i) in headers">
+          <slot :name="`cell(${header.value})`" v-bind:data="item">
+            {{ header + item }}
+          </slot>
+        </template> -->
       </EasyDataTable>
     </ClientOnly>
 
-    <button
-      type="button"
-      class="btn btn-primary"
-      @click="items = [...items, ...items]"
-    >
+    <button type="button" class="btn btn-primary" @click="items.push(...items)">
       add
     </button>
 
@@ -26,60 +35,62 @@
 </template>
 
 <script lang="ts" setup>
-const headers = [
-  { text: "PLAYER", value: "player" },
-  { text: "TEAM", value: "team" },
-  { text: "NUMBER", value: "number" },
-  { text: "POSITION", value: "position" },
-  { text: "HEIGHT", value: "indicator.height" },
-  { text: "WEIGHT (lbs)", value: "indicator.weight", sortable: true },
-  { text: "LAST ATTENDED", value: "lastAttended", width: 200 },
-  { text: "COUNTRY", value: "country" },
-];
+defineProps(["headers", "items", "loading"]);
 
-const items = ref([
-  {
-    player: "محمد احمد",
-    team: "الاهلي",
-    number: 30,
-    position: "خط وسط",
-    indicator: { height: "6-2", weight: 185 },
-    lastAttended: "اي حاجة",
-    country: "مصر",
-  },
-  {
-    player: "Lebron James",
-    team: "LAL",
-    number: 6,
-    position: "F",
-    indicator: { height: "6-9", weight: 250 },
-    lastAttended: "St. Vincent-St. Mary HS (OH)",
-    country: "USA",
-  },
-  {
-    player: "Kevin Durant",
-    team: "BKN",
-    number: 7,
-    position: "F",
-    indicator: { height: "6-10", weight: 240 },
-    lastAttended: "Texas-Austin",
-    country: "USA",
-  },
-  {
-    player: "Giannis Antetokounmpo",
-    team: "MIL",
-    number: 34,
-    position: "F",
-    indicator: { height: "6-11", weight: 242 },
-    lastAttended: "Filathlitikos",
-    country: "Greece",
-  },
-]);
+// const headers = [
+//   { text: "PLAYER", value: "player" },
+//   { text: "TEAM", value: "team" },
+//   { text: "NUMBER", value: "number" },
+//   { text: "POSITION", value: "position" },
+//   { text: "HEIGHT", value: "indicator.height" },
+//   { text: "WEIGHT (lbs)", value: "indicator.weight", sortable: true },
+//   { text: "LAST ATTENDED", value: "lastAttended", width: 200 },
+//   { text: "COUNTRY", value: "country" },
+// ];
+// const items = ref([
+//   {
+//     player: "محمد احمد",
+//     team: "الاهلي",
+//     number: 30,
+//     position: "خط وسط",
+//     indicator: { height: "6-2", weight: 185 },
+//     lastAttended: "اي حاجة",
+//     country: "مصر",
+//   },
+//   {
+//     player: "Lebron James",
+//     team: "LAL",
+//     number: 6,
+//     position: "F",
+//     indicator: { height: "6-9", weight: 250 },
+//     lastAttended: "St. Vincent-St. Mary HS (OH)",
+//     country: "USA",
+//   },
+//   {
+//     player: "Kevin Durant",
+//     team: "BKN",
+//     number: 7,
+//     position: "F",
+//     indicator: { height: "6-10", weight: 240 },
+//     lastAttended: "Texas-Austin",
+//     country: "USA",
+//   },
+//   {
+//     player: "Giannis Antetokounmpo",
+//     team: "MIL",
+//     number: 34,
+//     position: "F",
+//     indicator: { height: "6-11", weight: 242 },
+//     lastAttended: "Filathlitikos",
+//     country: "Greece",
+//   },
+// ]);
 </script>
 
 <style scoped>
 :deep(.vue3-easy-data-table__main) {
   overflow: unset;
+  min-height: unset;
 }
 :deep(thead th) {
   @apply text-slate-900 font-bold bg-slate-100 !important;

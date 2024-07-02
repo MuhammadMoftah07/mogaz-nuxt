@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full p-1 md:w-1/2">
+  <div class="w-full p-1">
     <label
-      class="block px-1 mb-[6px] text-xs font-bold tracking-wide uppercase text-slate-700"
+      class="block px-1 mb-[5px] text-xs font-bold tracking-wide uppercase text-slate-600"
       :for="id || generatedID"
     >
       {{ label }}

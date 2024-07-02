@@ -1,5 +1,11 @@
 /* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+/* tailwind layers  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* --appFont: "IBM Plex Sans Arabic", sans-serif; */
   --appFont: "Cairo", sans-serif;
@@ -9,11 +15,20 @@
   --appFont: "Cairo", sans-serif;
 }
 
-/* tailwind layers  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/*  remove white  scrollbar-gutter */
+html:has(.drawer-toggle:checked) {
+  scrollbar-gutter: unset !important;
+}
+:root:has(
+    :is(
+        .modal-open,
+        .\!modal:target,
+        .modal-toggle:checked + .\!modal,
+        .\!modal[open]
+      )
+  ) {
+  scrollbar-gutter: unset !important;
+}
 @layer base {
   html,
   body {
@@ -229,10 +244,9 @@ input[type="number"] {
 .Toastify__toast-body {
   font-family: var(--appFont);
 }
-.Toastify__toast-container{
-  @apply mt-12
+.Toastify__toast-container {
+  @apply mt-12;
 }
-
 
 /* tooltip  */
 .tooltip:before,
@@ -261,11 +275,11 @@ input[type="number"] {
   @apply inline-block mt-2 text-xs leading-none text-google;
 }
 
-.page-container{
-  @apply p-4
+.page-container {
+  @apply p-4;
 }
 
- /* page transitions  */
+/* page transitions  */
 .page-enter-active,
 .page-leave-active {
   transition: all 0.2s;
@@ -276,3 +290,6 @@ input[type="number"] {
   filter: blur(0.5rem);
 }
 
+.btn-theme {
+  @apply text-green-50 bg-theme2 hover:bg-theme1;
+}

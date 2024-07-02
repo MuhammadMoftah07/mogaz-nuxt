@@ -1,11 +1,10 @@
+import Modal from "~/components/Layout/Modal.vue";
+
 export const useGlobalStore = defineStore("useGlobalStore", {
   state: () => {
     return {
       variable1: "value1",
-      // activeSideTab: { id: 1 },
-      activeSideTab: { id: "GII" },
-      activeSector: 1,
-      sideCollapsed: false,
+      modal: "",
     };
   },
 
@@ -16,10 +15,6 @@ export const useGlobalStore = defineStore("useGlobalStore", {
   actions: {
     action1() {
       // logic for action1
-    },
-    setSector(sector: any) {
-      this.activeSector = sector;
-      localStorage.setItem("activeSector", sector);
     },
   },
 });
