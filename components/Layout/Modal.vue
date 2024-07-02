@@ -21,7 +21,7 @@
       </slot>
     </div>
 
-    <aside method="dialog" class="modal-backdrop" @click="modal = false">
+    <aside method="dialog" class="modal-backdrop" @click="$closeModal()">
       <button>close</button>
     </aside>
   </dialog>

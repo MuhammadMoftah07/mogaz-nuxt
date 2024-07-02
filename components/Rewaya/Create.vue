@@ -15,6 +15,7 @@
           :disabled="!title || loading"
           @click="submit()"
         >
+          <span v-if="loading" class="loading loading-spinner"></span>
           إتمام
         </button>
         <button
@@ -33,8 +34,6 @@ const title = ref("");
 const loading = ref(false);
 
 const submit = () => {
-  useNuxtApp().$closeModal();
-  return;
   loading.value = true;
   $http("/rewaya", {
     method: "post",
@@ -43,6 +42,7 @@ const submit = () => {
     },
   })
     .then(() => {
+      useRewayaStore().fetchData();
       useToast().showSuccess("تمت الاضافة بنجاح");
       useNuxtApp().$closeModal();
     })

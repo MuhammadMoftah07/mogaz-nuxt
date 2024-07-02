@@ -79,7 +79,7 @@
 
         <!-- @click="useAuth().signOut()" -->
         <button
-          @click="useToast().showSuccess('any words', { autoClose: 99999 })"
+          @click="useAuth().signOut()"
           class="nav-link tooltip-left !text-red-300"
           :class="sideCollapsed ? 'tooltip' : ''"
           data-tip="تسجيل خروج"

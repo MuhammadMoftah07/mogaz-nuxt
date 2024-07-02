@@ -1,7 +1,7 @@
 <template>
   <div>
     <ClientOnly>
-      {{ headers }}
+      <!-- {{ headers }} -->
       <EasyDataTable
         :headers="headers"
         hide-footer
@@ -24,13 +24,13 @@
       </EasyDataTable>
     </ClientOnly>
 
-    <button type="button" class="btn btn-primary" @click="items.push(...items)">
+    <!-- <button type="button" class="btn btn-primary" @click="items.push(...items)">
       add
     </button>
 
     <button type="button" class="btn btn-primary" @click="animate()">
       animate
-    </button>
+    </button> -->
   </div>
 </template>
 

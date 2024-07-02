@@ -5,12 +5,9 @@
     <ThemeTable :items="data" :headers="headers" :loading="loading">
       <template #cell(status)="data"> testt </template>
     </ThemeTable>
-    {{ $modal }}
 
     <RewayaCreate v-if="$modal.value == 'CreateRewaya'" />
-    <ThemePlusButton
-      @click.native="($modal.value = 'CreateRewaya'), console.log(useNuxtApp())"
-    />
+    <ThemePlusButton @click.native="$modal.value = 'CreateRewaya'" />
   </main>
 </template>
 
