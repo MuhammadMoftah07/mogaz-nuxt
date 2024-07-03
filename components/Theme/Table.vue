@@ -1,7 +1,8 @@
 <template>
   <div>
     <ClientOnly>
-      <!-- {{ headers }} -->
+      <!-- <pre dir="ltr" class="text-xs">{{ headers }}</pre> -->
+
       <EasyDataTable
         :headers="headers"
         hide-footer
@@ -10,17 +11,15 @@
         :items="items"
         :loading="loading"
       >
-        <!-- <slot name="item-status" data="item"> {{ item.status }} (lbs) </slot> -->
-
-        <!-- <template v-for="(header, i) in headers">
-          <template #[`item-status`]="item"> {{ item.status }} (lbs) </template>
-        </template> -->
-
-        <!-- <template v-for="(header, i) in headers">
-          <slot :name="`cell(${header.value})`" v-bind:data="item">
-            {{ header + item }}
+        <template
+          v-for="(header, index) in headers"
+          :key="index"
+          #[`item-${header.value}`]="item"
+        >
+          <slot :name="header.value" v-bind="item">
+            {{ item[header.value] }}
           </slot>
-        </template> -->
+        </template>
       </EasyDataTable>
     </ClientOnly>
 

@@ -4,8 +4,33 @@ export default defineNuxtConfig({
   modules: [
     "@pinia/nuxt",
     "@nuxtjs/tailwindcss",
-    "@sidebase/nuxt-auth",
+    [
+      "@nuxtjs/i18n",
+      {
+        defaultLocale: "ar",
+        // defaultDirection: "rtl",
+        langDir: "./locales/",
+        locales: [
+          {
+            file: "en.js",
+            code: "en",
+            iso: "en-CA",
+            name: "English",
+            dir: "ltr",
+          },
+          {
+            file: "ar.js",
+            code: "ar",
+            iso: "ar-EG",
+            name: "Arabic",
+            dir: "rtl",
+          },
+        ],
+      },
+    ],
     "@formkit/auto-animate/nuxt",
+    "@sidebase/nuxt-auth",
+    "@nuxtjs/i18n",
   ],
   auth: {
     baseURL: process.env.BASE_URL,
