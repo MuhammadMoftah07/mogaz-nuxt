@@ -13,7 +13,7 @@ export const useRewayaStore = defineStore("useRewayaStore", {
     fetchData() {
       $http("/rewaya")
         .then((res) => {
-          this.data = res.response;
+          this.data = res.response.data;
           return res;
         })
         .catch((err) => {

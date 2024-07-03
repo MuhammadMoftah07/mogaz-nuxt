@@ -10,6 +10,7 @@
         alternating
         :items="items"
         :loading="loading"
+        show-index
       >
         <template
           v-for="(header, index) in headers"

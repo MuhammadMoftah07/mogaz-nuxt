@@ -4,7 +4,16 @@
     <ThemeTable :items="data" :headers="headers" :loading="loading">
       <template #status="item"> {{ item.status }} </template>
 
-      <template #actions="item"> </template>
+      <template #actions="item">
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            class="p-1 !border-2 rounded-md h-7 text-slate-500 border-slate-800 bg-slate-50 btn"
+          >
+            <IconsEditIcon2 class="w-5 h-5" />
+          </button>
+        </div>
+      </template>
     </ThemeTable>
 
     <RewayaCreate v-if="$modal.value == 'CreateRewaya'" />
@@ -23,7 +32,8 @@ const data = computed(() => useRewayaStore().data);
 const headers = computed(() => {
   return [
     { text: $t("title"), value: "title" },
-    { text: $t("status"), value: "status" },
+    // { text: "ID", value: "id", width: 100 },
+    // { text: $t("status"), value: "status" },
     { text: $t("actions"), value: "actions" },
     // { text: "عدد الطلاب", value: "student_count" },
   ];
