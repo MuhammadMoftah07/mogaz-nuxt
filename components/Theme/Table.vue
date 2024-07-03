@@ -18,7 +18,7 @@
           #[`item-${header.value}`]="item"
         >
           <slot :name="header.value" v-bind="item">
-            {{ item[header.value] }}
+            {{ getCellValue(header, item) }}
           </slot>
         </template>
       </EasyDataTable>
@@ -36,6 +36,15 @@
 
 <script lang="ts" setup>
 defineProps(["headers", "items", "loading"]);
+
+const getCellValue = (header, item) => {
+  return header.value.split(".").reduce((obj, key) => {
+    if (!obj[key]) {
+      return "--------";
+    }
+    return obj[key];
+  }, item);
+};
 
 // const headers = [
 //   { text: "PLAYER", value: "player" },

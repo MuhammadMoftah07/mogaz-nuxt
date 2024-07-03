@@ -35,6 +35,19 @@
         <NuxtLink
           class="nav-link tooltip-left"
           :class="sideCollapsed ? 'tooltip' : ''"
+          data-tip="الكورسات"
+          :to="'/courses'"
+          v-auto-animate="{ duration: 150 }"
+        >
+          <span class="min-w-[20px]">
+            <IconsBagIcon class="w-5 h-5" />
+          </span>
+          <p v-if="!sideCollapsed">الكورسات</p>
+        </NuxtLink>
+
+        <NuxtLink
+          class="nav-link tooltip-left"
+          :class="sideCollapsed ? 'tooltip' : ''"
           data-tip="الشيوخ"
           :to="'/teachers'"
           v-auto-animate="{ duration: 150 }"
@@ -116,6 +129,8 @@
 </template>
 
 <script lang="ts" setup>
+import ReadsReactIcon from "../icons/ReadsReactIcon.vue";
+
 const collapseBtn = ref(false);
 const sideCollapsed = computed(() => useGlobalStore().sideCollapsed);
 </script>

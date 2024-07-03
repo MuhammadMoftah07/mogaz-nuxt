@@ -82,6 +82,7 @@ export default {
   select_all: "Select all",
   title: "title",
   status: "status",
+  description: "description",
 
   // account
   wanna_change_name: "Want to change the name?",
@@ -103,4 +104,6 @@ export default {
   actions: "Actions",
 
   // Theme
+  rewaya: "rewaya",
+  sheikh: "sheikh",
 };

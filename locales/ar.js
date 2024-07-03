@@ -101,6 +101,9 @@ export default {
   please_fill_all_inputs: "يرجى ملء جميع المدخلات",
   delete: "حذف",
   actions: "الإجراءات",
+  description: "الوصف",
 
   // Theme
+  rewaya: "الروايا",
+  sheikh: "الشيخ",
 };

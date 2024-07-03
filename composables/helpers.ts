@@ -10,7 +10,6 @@ export const useToast = () => ({
     }),
 
   errorHandler: (err: any, customMessage: any) => {
-    console.log("error ,", err.response);
     // return;
     if (customMessage) {
       useNuxtApp().$toast.error(customMessage);
