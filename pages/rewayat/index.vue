@@ -6,11 +6,12 @@
 
       <template #actions="item">
         <div class="flex items-center gap-2">
-          <button
-            type="button"
-            class="p-1 !border-2 rounded-md h-7 text-slate-500 border-slate-800 bg-slate-50 btn"
-          >
-            <IconsEditIcon2 class="w-5 h-5" />
+          <button type="button" class="edit-btn">
+            <IconsEditIcon2 class="w-5 h-[18px]" />
+          </button>
+
+          <button type="button" class="del-btn">
+            <IconsDeleteIcon class="w-5 h-[18px]" />
           </button>
         </div>
       </template>

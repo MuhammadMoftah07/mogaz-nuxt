@@ -293,3 +293,11 @@ input[type="number"] {
 .btn-theme {
   @apply text-green-50 bg-theme2 hover:bg-theme1;
 }
+
+.edit-btn {
+  @apply h-auto p-[3px] border border-solid rounded-md text-slate-600 border-slate-300 bg-slate-50 btn;
+}
+
+.del-btn {
+  @apply h-auto p-[3px] border border-solid rounded-md text-red-500 border-red-300 bg-slate-50 btn;
+}
