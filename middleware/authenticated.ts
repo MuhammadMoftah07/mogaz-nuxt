@@ -1,4 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
+  return;
   const { status } = useAuth();
   if (status.value == "unauthenticated") {
     nextTick(() => {
