@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-  middleware: "authenticated",
-});
+// definePageMeta({
+//   middleware: "authenticated",
+// });
 </script>
 
 <style></style>
