@@ -1,5 +1,3 @@
-import Modal from "~/components/Layout/Modal.vue";
-
 export const useGlobalStore = defineStore("useGlobalStore", {
   state: () => {
     return {

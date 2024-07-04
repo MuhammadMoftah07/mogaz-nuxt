@@ -1,6 +1,6 @@
 <template>
   <main class="">
-    <ThemeTitle class="mb-6" text=" الطلاب" />
+    <ThemeTitle class="mb-6" text=" الشيوخ" />
     <ThemeTable :items="data" :headers="headers" :loading="loading">
       <template #actions="item">
         <div class="flex items-center gap-2">
@@ -24,11 +24,12 @@
 definePageMeta({
   middleware: "authenticated",
 });
+
 const $t = useI18n().t;
 const loading = ref(true);
-await useStudentStore().fetchData();
+await useSheikhStore().fetchData();
 loading.value = false;
-const data = computed(() => useStudentStore().data);
+const data = computed(() => useSheikhStore().data);
 
 const headers = computed(() => {
   return [

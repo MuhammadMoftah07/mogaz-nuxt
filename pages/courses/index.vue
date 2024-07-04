@@ -23,6 +23,9 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  middleware: "authenticated",
+});
 // const value = ref("test");
 const $t = useI18n().t;
 const loading = ref(true);

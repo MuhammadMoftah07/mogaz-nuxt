@@ -102,6 +102,11 @@ export default {
   delete: "حذف",
   actions: "الإجراءات",
   description: "الوصف",
+  nationality: "الجنسية",
+  job: "الوظيفة",
+  qualification: "المؤهل",
+  gender: "النوع",
+  verified: "مفعل",
 
   // Theme
   rewaya: "الروايا",

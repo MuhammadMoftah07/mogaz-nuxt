@@ -83,6 +83,11 @@ export default {
   title: "title",
   status: "status",
   description: "description",
+  nationality: "nationality",
+  job: "job",
+  qualification: "qualification",
+  gender: "gender",
+  verified: "verified",
 
   // account
   wanna_change_name: "Want to change the name?",

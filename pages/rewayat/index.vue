@@ -6,11 +6,11 @@
 
       <template #actions="item">
         <div class="flex items-center gap-2">
-          <button type="button" class="edit-btn">
+          <button type="button" class="edit-btn tooltip" data-tip="تعديل">
             <IconsEditIcon2 class="w-5 h-[18px]" />
           </button>
 
-          <button type="button" class="del-btn">
+          <button type="button" class="del-btn tooltip" data-tip="مسح">
             <IconsDeleteIcon class="w-5 h-[18px]" />
           </button>
         </div>
@@ -23,7 +23,10 @@
 </template>
 
 <script lang="ts" setup>
-// const value = ref("test");
+definePageMeta({
+  middleware: "authenticated",
+});
+
 const $t = useI18n().t;
 const loading = ref(true);
 await useRewayaStore().fetchData();

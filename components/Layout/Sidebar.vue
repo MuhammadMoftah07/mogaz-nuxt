@@ -49,7 +49,7 @@
           class="nav-link tooltip-left"
           :class="sideCollapsed ? 'tooltip' : ''"
           data-tip="الشيوخ"
-          :to="'/teachers'"
+          :to="'/sheikh'"
           v-auto-animate="{ duration: 150 }"
         >
           <span class="min-w-[20px]">
@@ -92,7 +92,9 @@
 
         <!-- @click="useAuth().signOut()" -->
         <button
-          @click="useAuth().signOut()"
+          @click="
+            useAuth().signOut({ external: true, callbackUrl: '/auth/login' })
+          "
           class="nav-link tooltip-left !text-red-300"
           :class="sideCollapsed ? 'tooltip' : ''"
           data-tip="تسجيل خروج"
