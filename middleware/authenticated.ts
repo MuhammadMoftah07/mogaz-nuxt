@@ -10,6 +10,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
         autoClose: 2000,
       });
     });
-    return abortNavigation();
+    return navigateTo("/auth/login");
+    // return abortNavigation();
   }
 });
