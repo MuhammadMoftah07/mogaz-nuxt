@@ -95,8 +95,7 @@
 
               <button
                 class="flex w-full gap-2 mx-auto mt-2 bg-theme2 hover:bg-theme2/80 btn"
-                @click="loading = !loading"
-                v-if="false"
+                @click="testFunc()"
               >
                 <span> test</span>
               </button>
@@ -142,5 +141,10 @@ const login = async () => {
     if (err?.response?.status == 403)
       useNuxtApp().$toast.error("خطأ في بيانات الدخول");
   }
+};
+const testFunc = () => {
+  $http("/rewaya");
+  $http("/status");
+  $http("/roles");
 };
 </script>
