@@ -52,8 +52,7 @@ html:has(.drawer-toggle:checked) {
 
   /* inputs */
   .input {
-    @apply w-full p-2 font-semibold bg-white border rounded-lg shadow-inner hover:bg-slate-50 border-slate-200 text-slate-500 h-11;
-    @apply focus:border-[#17D69A] focus:outline-none focus:ring-[#17D69A] focus:ring-1;
+    @apply w-full p-2 text-sm h-auto font-semibold bg-white border rounded-lg shadow-inner hover:bg-slate-50 border-slate-200 text-slate-500 focus:border-[#17D69A] focus:outline-none focus:ring-[#17D69A] focus:ring-1;
   }
 
   .input-title {
@@ -294,7 +293,7 @@ input[type="number"] {
   @apply text-green-50 bg-theme2 hover:bg-theme1;
 }
 
-.edit-btn {
+.action-btn {
   @apply h-auto p-[3px] border border-solid rounded-md text-slate-600 border-slate-300 bg-slate-50 btn;
 }
 

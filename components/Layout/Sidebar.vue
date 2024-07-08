@@ -89,6 +89,19 @@
           </span>
           <p v-if="!sideCollapsed">الحساب</p>
         </NuxtLink>
+        <NuxtLink
+          v-if="useRuntimeConfig().public.envMode == 'dev'"
+          class="nav-link tooltip-left"
+          :class="sideCollapsed ? 'tooltip' : ''"
+          data-tip="الحساب"
+          :to="'/components'"
+          v-auto-animate="{ duration: 150 }"
+        >
+          <span class="min-w-[20px]">
+            <IconsTypesIcon class="w-5 h-5" />
+          </span>
+          <p v-if="!sideCollapsed">Components</p>
+        </NuxtLink>
 
         <!-- @click="useAuth().signOut()" -->
         <button
@@ -132,6 +145,7 @@
 
 <script lang="ts" setup>
 import ReadsReactIcon from "../icons/ReadsReactIcon.vue";
+import TypesIcon from "../icons/TypesIcon.vue";
 
 const collapseBtn = ref(false);
 const sideCollapsed = computed(() => useGlobalStore().sideCollapsed);

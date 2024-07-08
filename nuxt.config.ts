@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: false,
   modules: [
     "@pinia/nuxt",
     "@nuxtjs/tailwindcss",
@@ -52,7 +53,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseURL: process.env.BASE_URL || "https://api.example.com/",
-      envMode: process.env.envMode || "dev",
+      envMode: process.env.envMode || "production",
     },
   },
   css: ["assets/css/custom.css"],

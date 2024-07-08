@@ -13,7 +13,7 @@
         <div class="flex flex-col items-center mt-8">
           <h1 class="text-2xl font-extrabold xl:text-3xl">دخول بحسابك</h1>
           <div class="flex-1 w-full mt-8">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center" v-if="false">
               <button class="social-btn">
                 <div class="p-1 bg-white rounded-full">
                   <svg class="w-5 h-5" viewBox="0 0 533.5 544.3">
@@ -46,7 +46,7 @@
               </button>
             </div>
 
-            <div class="mt-3 mb-6 text-center border-b">
+            <div class="mt-3 mb-6 text-center border-b" v-if="false">
               <div
                 class="inline-block px-2 text-sm font-medium leading-none tracking-wide text-gray-600 transform translate-y-1/2 bg-white"
               >

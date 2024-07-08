@@ -1,4 +1,4 @@
-export const useRewayaStore = defineStore("useRewayaStore", {
+export const useDataStore = defineStore("useDataStore", {
   state: () => {
     return reactive({
       data: [],
@@ -11,9 +11,13 @@ export const useRewayaStore = defineStore("useRewayaStore", {
 
   actions: {
     fetchData() {
-      $http("/rewaya")
+      $http("/data", {
+        params: {
+          per_page: 5,
+        },
+      })
         .then((res) => {
-          this.data = res.response.data;
+          this.data = res.response;
           return res;
         })
         .catch((err) => {

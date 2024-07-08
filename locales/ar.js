@@ -111,4 +111,5 @@ export default {
   // Theme
   rewaya: "الروايا",
   sheikh: "الشيخ",
+  course: "الكورس",
 };

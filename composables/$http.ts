@@ -1,4 +1,4 @@
-export const $http = (request, opts) => {
+export const $http = (request, opts?) => {
   const config = useRuntimeConfig();
   const { token } = useAuth();
 

@@ -6,7 +6,7 @@
 
       <template #actions="item">
         <div class="flex items-center gap-2">
-          <button type="button" class="edit-btn">
+          <button type="button" class="action-btn">
             <IconsEditIcon2 class="w-5 h-[18px]" />
           </button>
 

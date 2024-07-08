@@ -7,7 +7,7 @@
       {{ label }}
     </label>
     <input
-      class="block w-full px-4 py-2 text-sm font-medium border-2 rounded-lg appearance-none text-slate-700 bg-slate-100 border-slate-200 focus:outline-none focus:bg-white focus:border-slate-300"
+      class="input"
       :type="type"
       :placeholder="placeholder"
       :id="id || generatedID"

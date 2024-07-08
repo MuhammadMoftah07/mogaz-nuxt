@@ -1,7 +1,9 @@
 <template>
   <dialog class="modal modal-open">
     <div class="modal-box">
-      <h3 class="text-lg font-bold"><slot name="modal-title"></slot></h3>
+      <h3 class="text-lg font-bold text-slate-900">
+        <slot name="modal-title"></slot>
+      </h3>
       <p class="py-4">
         <slot name="modal-body"></slot>
       </p>
@@ -12,7 +14,7 @@
             إتمام
           </button>
           <button
-            @click="$modal.value = false"
+            @click="$modal.value = ''"
             class="font-medium btn h-9 btn-ghost text-slate-700"
           >
             اغلاق

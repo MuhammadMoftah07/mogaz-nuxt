@@ -5,7 +5,7 @@
     <section>
       <h3 class="title">Modal</h3>
 
-      <LayoutModal />
+      <!-- <LayoutModal /> -->
     </section>
 
     <div class="p-10 bg-slate-500 text-slate-50 rounded-xl">
